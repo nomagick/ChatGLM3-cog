@@ -1,0 +1,3 @@
+[submodule "chatglm3-6b"]
+	path = chatglm3-6b
+	url = https://www.modelscope.cn/ZhipuAI/chatglm3-6b.git
