@@ -127,7 +127,11 @@ def stream_generate(
             break
 
 
+def process_response(self, output, history):
+    return output, history
+
 def patch(tokenizer, model):
     tokenizer.tokenizer.encode_chat = types.MethodType(encode_chat, tokenizer.tokenizer)
     tokenizer.build_chat_input = types.MethodType(build_chat_input, tokenizer)
     model.stream_generate = types.MethodType(stream_generate, model)
+    model.process_response = types.MethodType(process_response, model)
