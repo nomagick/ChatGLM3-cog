@@ -6,7 +6,7 @@ from transformers import AutoModel, AutoTokenizer
 
 import patch_chatglm
 
-MODEL_PATH = "./chatglm3-6b-32k"
+MODEL_PATH = "./chatglm3-6b"
 
 from transformers.utils import logging
 
@@ -40,7 +40,10 @@ class Predictor(BasePredictor):
     ) -> ConcatenateIterator[str]:
         """Run a single prediction on the model"""
 
-        do_sample = False if temperature <= 0 else True
+        do_sample = True
+        if temperature <= 0:
+            do_simple = False
+            temperature = 0.01
 
         offset = 0
 
