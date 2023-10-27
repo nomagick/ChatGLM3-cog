@@ -30,7 +30,7 @@ class Predictor(BasePredictor):
         self,
         prompt: str = Input(
             description="Prompt for completion",
-            default='<|system|>\nYou are a helpful assistant\n<|user|>\n请使用英文重复这段话："为了使模型生成最优输出，当使用 ChatGLM3-6B 时需要使用特定的输入格式，请按照示例格式组织输入。"\n<|assistant|>',
+            default='<|system|>\nYou are a helpful assistant\n<|user|>\n请使用英文重复这段话："为了使模型生成最优输出，当使用 ChatGLM3-6B 时需要使用特定的输入格式，请按照示例格式组织输入。"\n<|assistant|>\n',
         ),
         max_tokens: int = Input(
             description="Max new tokens to generate", default=2048, ge=1, le=32768
