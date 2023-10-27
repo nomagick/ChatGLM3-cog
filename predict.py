@@ -6,7 +6,7 @@ from transformers import AutoModel, AutoTokenizer
 
 import patch_chatglm
 
-MODEL_PATH = "./chatglm3-6b-32k"
+MODEL_PATH = "./chatglm3-6b"
 
 from transformers.utils import logging
 
